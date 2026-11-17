@@ -1,0 +1,61 @@
+/* Plantilla de servicio · cuerpo de lectura en luz de día, pasos en alba */
+
+.service-body { background: var(--dia); padding-block: var(--gap-section); }
+.service-body-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 380px); gap: clamp(32px, 6vw, 112px); align-items: start; }
+.service-main { container-type: inline-size; max-width: 72ch; }
+.service-main > h2 { --max: 4rem; margin-bottom: 32px; }
+.service-main > p { font-size: 1.1875rem; line-height: 1.6; }
+.service-main > p + p { margin-top: 20px; }
+.service-section { margin-top: clamp(48px, 6vw, 80px); }
+.service-section h3 { font-size: min(2.25rem, calc(160cqi / (var(--chars, 30) * 0.56))); line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 18px; }
+.service-section > p { font-size: 1.125rem; line-height: 1.6; }
+.service-list-check { margin-top: 18px; display: grid; gap: 0; background: var(--paper); }
+.service-list-check li { position: relative; padding: 14px 18px 14px 50px; font-size: 1.0625rem; line-height: 1.5; }
+.service-list-check li::before { content: ""; position: absolute; left: 18px; top: 22px; width: 18px; height: 9px; border-radius: 18px 18px 0 0; background: var(--group-deep, var(--sol)); }
+.body-figure { margin-top: clamp(40px, 5vw, 64px); aspect-ratio: 16 / 10; }
+.service-highlight { margin-top: clamp(40px, 5vw, 64px); }
+.service-highlight::before { content: ""; display: block; width: 40px; height: 20px; border-radius: 40px 40px 0 0; background: var(--group-deep, var(--sol)); margin-bottom: 16px; }
+.service-highlight p { font-size: 1.375rem; line-height: 1.45; font-weight: 500; letter-spacing: -0.01em; }
+
+.service-sidebar { position: sticky; top: calc(var(--nav-h) + 24px); display: grid; gap: 0; }
+.service-sidebar { background: var(--noche); color: var(--paper); }
+.sidebar-card { padding: 28px; }
+.sidebar-card + .sidebar-card { padding-top: 4px; }
+.sidebar-related-list a { color: var(--paper-soft); }
+.sidebar-related-list a:hover { color: var(--paper); }
+.sidebar-card-title { font-size: 1.75rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; }
+.sidebar-card-subtitle { margin-top: 12px; font-size: 1.0625rem; color: var(--paper-soft); }
+.sidebar-card .btn { width: 100%; margin-top: 16px; }
+.sidebar-card .sidebar-cta-wa { background: var(--sol); color: var(--ink); margin-top: 24px; }
+.sidebar-card .sidebar-cta-wa:hover { background: #F7A04E; }
+.sidebar-card .sidebar-cta-tel { background: var(--step-paper); color: var(--paper); margin-top: 8px; }
+.sidebar-info-row { margin-top: 18px; }
+.sidebar-info-text strong { display: block; font-size: 1.0625rem; }
+.sidebar-info-text span { display: block; color: var(--paper-soft); font-size: 1rem; }
+.sidebar-related-title { font-weight: 800; font-size: 1.125rem; letter-spacing: -0.01em; margin-bottom: 6px; }
+.sidebar-related-title + .sidebar-related-list { margin-bottom: 18px; }
+.sidebar-related-list a { display: flex; align-items: center; min-height: 44px; font-weight: 500; text-underline-offset: 0.2em; }
+
+.service-steps { background: var(--alba); padding-block: var(--gap-section); }
+.service-steps > .container { container-type: inline-size; }
+.service-steps h2 { --max: 4.75rem; margin-bottom: clamp(40px, 6vw, 80px); }
+.steps-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 40px); align-items: start; }
+.step-item { display: grid; grid-template-rows: 52px auto 1fr; }
+.step-item::before { content: ""; display: block; background: var(--noche); border-radius: 999px 999px 0 0; margin-bottom: 22px; width: 56px; height: 28px; align-self: end; margin-bottom: 0; }
+.step-item:nth-child(2)::before { width: 72px; height: 36px; background: #C2620E; }
+.step-item:nth-child(3)::before { width: 88px; height: 44px; background: var(--dorado); }
+.step-item:nth-child(4)::before { width: 104px; height: 52px; background: var(--sol); }
+.step-item h3 { margin-top: 22px; font-size: 1.5rem; letter-spacing: -0.025em; line-height: 1.1; margin-bottom: 10px; }
+.step-item p { font-size: 1.0625rem; line-height: 1.55; }
+
+@media (max-width: 1080px) {
+    .service-body-grid { grid-template-columns: 1fr; }
+    .service-sidebar { position: static; grid-template-columns: 1fr 1fr; }
+    .steps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+}
+@media (max-width: 640px) {
+    .service-sidebar { grid-template-columns: 1fr; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .service-list-check li { padding-left: 44px; }
+    .service-list-check li::before { left: 14px; }
+}
